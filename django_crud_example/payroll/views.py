@@ -1,6 +1,6 @@
 
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, DeleteView
+from django.views.generic import ListView, DetailView, DeleteView, UpdateView 
 from .models import Employee
 
 class EmployeeListView(ListView):
@@ -32,3 +32,11 @@ class EmployeeDeleteView(DeleteView):
 
     def get_queryset(self):
         return super().get_queryset().select_related('EmpDepartment', 'EmpCountry')
+    
+class EmployeeUpdateView(UpdateView):
+    model = Employee
+    fields = [ 
+        "FirstName", 
+        "LastName"
+    ] 
+    success_url = reverse_lazy('payroll:employee_list')
