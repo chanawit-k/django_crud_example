@@ -1,35 +1,37 @@
 {% extends 'base.html' %}
 {% block body %}
-{% for employee in employee_list %}
-    {{employee.EmpDepartment.DeptName}}
-{% endfor %}
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-{% endblock body%}
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Employee ID</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Title</td>
+        <td>Salary</td>
+        <td>Department Name</td>
+        <td>Country Name</td>
+        <td>Location</td>
+        <td>Actions</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for emp in employee_list %}
+        <tr>
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.FirstName }}</td>
+          <td>{{ emp.LastName }}</td>
+          <td>{{ emp.TitleName }}</td>
+          <td>{{ emp.Salary }}</td>
+          <td>{{ emp.EmpDepartment.DeptName }}</td>
+          <td>{{ emp.EmpCountry.CountryName }}</td>
+          <td>{{ emp.EmpDepartment.LocationName }}</td>
+          <td>
+            <a href="{% url 'payroll:employee_detail' emp.id %}">Details</a> |
+            <a href="EmployeeUpdate/{{ emp.id }}">Edit</a> |
+            <a href="EmployeeDelete/{{ emp.id }}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
