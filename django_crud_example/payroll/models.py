@@ -34,3 +34,5 @@ class Employee(models.Model):
     Notes=models.CharField(max_length=200)
     Email=models.EmailField(default="",max_length=50)
     PhoneNumber=models.CharField(default="",max_length=20)
+    EmpDepartment=models.ForeignKey("Department",on_delete=models.PROTECT,related_name="Departments")
+    EmpCountry=models.ForeignKey("Country",on_delete=models.PROTECT,related_name="Countries")

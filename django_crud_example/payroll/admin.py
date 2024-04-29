@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Department, Country
+from .models import Department, Country, Employee
 
 # Register your models here.
 @admin.register(Department)
@@ -9,4 +9,9 @@ class DepartmentAdmin(admin.ModelAdmin):
 
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
     pass
