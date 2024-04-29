@@ -1,6 +1,6 @@
 
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, DeleteView, UpdateView 
+from django.views.generic import ListView, DetailView, DeleteView, UpdateView, CreateView
 from .models import Employee
 
 class EmployeeListView(ListView):
@@ -40,3 +40,8 @@ class EmployeeUpdateView(UpdateView):
         "LastName"
     ] 
     success_url = reverse_lazy('payroll:employee_list')
+
+class EmployeeCreateView(CreateView):
+    model = Employee
+    success_url = reverse_lazy('payroll:employee_list')
+    fields  ='__all__'

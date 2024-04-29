@@ -27,7 +27,7 @@
           <td>{{ emp.EmpDepartment.LocationName }}</td>
           <td>
             <a href="{% url 'payroll:employee_detail' emp.id %}">Details</a> |
-            <a href="">Edit</a> |
+            <a href="{% url 'payroll:employee_update' emp.id %}">Edit</a> |
             <a href="{% url 'payroll:employee_delete' emp.id %}">Delete</a>
           </td>
         </tr>
