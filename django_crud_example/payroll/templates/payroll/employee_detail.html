@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block body %}
+ <table class="table">
+        <tr>
+            <td>Employee ID</td>
+            <td>{{employee.id}}</td>
+        </tr>
+        <tr>
+            <td>FirstName</td>
+            <td>{{employee.FirstName}}</td>
+        </tr>
+
+        <tr>
+            <td>LastName</td>
+            <td>{{employee.LastName}}</td>
+        </tr>
+        <tr>
+            <td>HasPassport</td>
+            <td>{{employee.HasPassport}}</td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td>{{employee.Salary}}</td>
+        </tr>
+        <tr>
+            <td>BirthDate</td>
+            <td>{{employee.BirthDate}}</td>
+        </tr>
+        <tr>
+            <td>HireDate</td>
+            <td>{{employee.HireDate}}</td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td>{{employee.EmpCountry.CountryName}}</td>
+        </tr>
+        <tr>
+            <td>Notes</td>
+            <td>{{employee.Notes}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{employee.Email}}</td>
+        </tr>
+        <tr>
+            <td>PhoneNumber</td>
+            <td>{{employee.PhoneNumber}}</td>
+        </tr>
+        <tr>
+            <td>Department Name</td>
+            <td>{{employee.EmpDepartment.DeptName}}</td>
+        </tr>
+        <tr>
+            <td>Location Name</td>
+            <td>{{employee.EmpDepartment.LocationName}}</td>
+        </tr>
+
+       
+    </table>
+   
+
+    <div>            
+        <a href="{% url 'payroll:employee_list' %}">Back To List</a>
+    </div>
+    
+{% endblock %}
