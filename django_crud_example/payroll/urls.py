@@ -6,4 +6,5 @@ app_name = 'payroll'
 
 
 urlpatterns = [
+    path('', views.EmployeeListView.as_view(), name='employee_list'),
 ]
