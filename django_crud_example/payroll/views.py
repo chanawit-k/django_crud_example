@@ -2,6 +2,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, DeleteView, UpdateView, CreateView
 from .models import Employee
+from .forms import EmployeeForm
 
 class EmployeeListView(ListView):
     model = Employee
@@ -35,13 +36,10 @@ class EmployeeDeleteView(DeleteView):
     
 class EmployeeUpdateView(UpdateView):
     model = Employee
-    fields = [ 
-        "FirstName", 
-        "LastName"
-    ] 
+    form_class = EmployeeForm
     success_url = reverse_lazy('payroll:employee_list')
 
 class EmployeeCreateView(CreateView):
     model = Employee
+    form_class = EmployeeForm
     success_url = reverse_lazy('payroll:employee_list')
-    fields  ='__all__'
