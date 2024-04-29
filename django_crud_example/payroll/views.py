@@ -1,6 +1,6 @@
-from typing import Any
-from django.views.generic.list import ListView
-from django.views.generic.detail import DetailView
+
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, DeleteView
 from .models import Employee
 
 class EmployeeListView(ListView):
@@ -25,3 +25,10 @@ class EmployeeDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+    
+class EmployeeDeleteView(DeleteView):
+    model = Employee
+    success_url = reverse_lazy('payroll:employee_list')
+
+    def get_queryset(self):
+        return super().get_queryset().select_related('EmpDepartment', 'EmpCountry')
