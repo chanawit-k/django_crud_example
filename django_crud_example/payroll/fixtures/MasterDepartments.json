@@ -1,0 +1,50 @@
+[
+    {
+        "model": "payroll.Department",
+        "pk": 1,
+        "fields": {
+          "DeptName": "HR",
+          "LocationName": "West"
+        }
+    },
+    {
+        "model": "payroll.Department",
+        "pk": 2,
+        "fields": {
+          "DeptName": "Sales",
+          "LocationName": "West"
+        }
+    },
+    {
+        "model": "payroll.Department",
+        "pk": 3,
+        "fields": {
+          "DeptName": "Finance",
+          "LocationName": "West"
+        }
+    },
+    {
+        "model": "payroll.Department",
+        "pk": 4,
+        "fields": {
+          "DeptName": "Billing",
+          "LocationName": "East"
+        }
+    },
+    {
+        "model": "payroll.Department",
+        "pk": 5,
+        "fields": {
+          "DeptName": "Admin",
+          "LocationName": "East"
+        }
+    },
+    {
+        "model": "payroll.Department",
+        "pk": 6,
+        "fields": {
+          "DeptName": "Networking",
+          "LocationName": "East"
+        }
+    }
+]
